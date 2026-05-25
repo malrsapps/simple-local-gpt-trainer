@@ -203,4 +203,12 @@ This repository is released under the Apache 2.0 License.
 
 ---
 
+## Related Article
+
+Medium article:
+
+https://medium.com/@malrsapps/train-a-tiny-gpt-style-model-from-your-own-text-d3e0665cbdfb
+
+---
+
 **Created by MA**
