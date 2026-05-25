@@ -10,7 +10,16 @@ def run(cmd):
     print("\nRunning:")
     print(" ".join(cmd))
     print("-" * 60)
-    subprocess.run(cmd)
+
+    result = subprocess.run(cmd)
+
+    if result.returncode != 0:
+        print("\nCommand failed.")
+        print("The workflow stopped because the previous step returned an error.")
+        print("Please read the message above and fix the issue before continuing.")
+        return False
+
+    return True
 
 
 def select_config():
@@ -80,11 +89,11 @@ except Exception as e:
 
 
 def prepare():
-    run([sys.executable, "scripts/01_prepare.py", "--config", CONFIG])
+    return run([sys.executable, "scripts/01_prepare.py", "--config", CONFIG])
 
 
 def train():
-    run([sys.executable, "scripts/02_train.py", "--config", CONFIG])
+    return run([sys.executable, "scripts/02_train.py", "--config", CONFIG])
 
 
 def inference():
@@ -92,7 +101,7 @@ def inference():
     if not prompt:
         prompt = "Merhaba"
 
-    run([
+    return run([
         sys.executable,
         "scripts/03_inference.py",
         "--config", CONFIG,
@@ -117,8 +126,12 @@ def run_full_workflow():
         print("Cancelled.")
         return
 
-    prepare()
-    train()
+    if not prepare():
+        return
+
+    if not train():
+        return
+
     inference()
 
 def show_project_status():

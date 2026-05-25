@@ -1,17 +1,105 @@
-Simple Local GPT Trainer is a small educational project.
+Simple Local GPT Trainer is a small educational project for local AI experimentation.
 
-It shows how a tiny GPT-style model can be trained from a plain text file.
+The project is designed to show how a tiny GPT-style model can be trained from a plain text file.
+
 The goal is not to create a powerful language model.
-The goal is to make the training process easier to understand.
+
+The goal is to make the training process easier to see, modify, and understand.
 
 A user can place text into the data folder.
-The preparation script trains a small tokenizer.
-The training script builds a tiny transformer model.
-The inference script generates text from a prompt.
 
-Small models can learn patterns from small datasets.
-They may repeat phrases or memorize the training text.
-This behavior is expected in tiny experiments.
+The preparation script reads the text and trains a small tokenizer.
 
-Local AI experiments are useful for learning.
-They help users understand tokenization, context length, model size, and training steps.
+The tokenizer converts text into token IDs.
+
+The dataset script splits those token IDs into fixed length training chunks.
+
+The training script builds a tiny transformer model from a configuration file.
+
+The model learns patterns from the prepared text.
+
+The inference script loads the trained model and generates text from a prompt.
+
+Small models can learn visible patterns from small datasets.
+
+They may also memorize the training text very quickly.
+
+This behavior is expected in tiny local experiments.
+
+Changing the dataset can change the generated output.
+
+Changing the context length can change how much text the model sees at one time.
+
+Changing the number of layers can change the size and capacity of the model.
+
+Changing the embedding size can strongly affect the parameter count.
+
+Changing the tokenizer vocabulary size can affect how text is split into tokens.
+
+A tiny model with a tiny dataset may produce repetitive text.
+
+A slightly larger model may learn more structure but may also overfit faster.
+
+A longer training run may improve pattern learning but can also increase memorization.
+
+This project is useful because it makes these tradeoffs visible.
+
+Instead of hiding the training process behind a large system, it exposes the main steps.
+
+The user can see text become tokens.
+
+The user can see tokens become a dataset.
+
+The user can see a small model being trained.
+
+The user can then test prompts and compare outputs.
+
+The project can run on a GPU when CUDA is available.
+
+It can also run on CPU for small tests, although training may be slow.
+
+The menu workflow is intended to reduce friction.
+
+A user can check the environment, prepare the dataset, train the model, run inference, and view project status.
+
+The configuration file keeps the important settings in one place.
+
+This makes the project easier to modify without editing the training code.
+
+Simple presets can help new users start quickly.
+
+Manual settings can help curious users explore deeper.
+
+The project is intentionally small.
+
+A small project is easier to inspect.
+
+A small project is easier to break and repair.
+
+A small project is easier to understand.
+
+The most important idea is experimentation.
+
+Users are encouraged to change the text file.
+
+Users are encouraged to change the model size.
+
+Users are encouraged to change the context length.
+
+Users are encouraged to observe what happens.
+
+The output is not expected to be perfect.
+
+The output is not expected to be factual.
+
+The output is a signal that the pipeline is working.
+
+This makes the project useful as a learning tool.
+
+Local AI experiments do not always need large infrastructure.
+
+Sometimes a small training loop is enough to understand an important concept.
+
+Sometimes a tiny model teaches more than a black box system.
+
+Simple Local GPT Trainer exists for that kind of learning.

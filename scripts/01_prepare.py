@@ -93,8 +93,16 @@ def main():
     print(f"Total tokens: {total_tokens}")
 
     if total_tokens < block_size * 2:
+        min_tokens = block_size * 2
         raise ValueError(
-            f"Corpus too small. Need at least about {block_size * 2} tokens, got {total_tokens}."
+            "\nYour input text is too short for the selected context length.\n\n"
+            f"Current token count: {total_tokens}\n"
+            f"Minimum recommended token count: {min_tokens}\n"
+            f"Selected block_size/context length: {block_size}\n\n"
+            "What you can do:\n"
+            "1. Add more text to data/input/corpus.txt\n"
+            "2. Or create/select a config with a smaller context length\n"
+            "3. For a quick demo, try block_size: 64\n"
         )
 
     print("[4/5] Creating fixed-length token chunks...")
