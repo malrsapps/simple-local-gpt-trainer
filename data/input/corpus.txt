@@ -1,0 +1,17 @@
+Simple Local GPT Trainer is a small educational project.
+
+It shows how a tiny GPT-style model can be trained from a plain text file.
+The goal is not to create a powerful language model.
+The goal is to make the training process easier to understand.
+
+A user can place text into the data folder.
+The preparation script trains a small tokenizer.
+The training script builds a tiny transformer model.
+The inference script generates text from a prompt.
+
+Small models can learn patterns from small datasets.
+They may repeat phrases or memorize the training text.
+This behavior is expected in tiny experiments.
+
+Local AI experiments are useful for learning.
+They help users understand tokenization, context length, model size, and training steps.

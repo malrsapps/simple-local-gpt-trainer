@@ -1,0 +1,21 @@
+project:
+  name: test_auto
+  input_text: data/input/corpus.txt
+  output_dir: outputs/test_auto
+tokenizer:
+  vocab_size: 2000
+  min_frequency: 1
+dataset:
+  block_size: 128
+  validation_ratio: 0.1
+model:
+  n_layer: 2
+  n_head: 2
+  n_embd: 128
+  dropout: 0.1
+training:
+  batch_size: 2
+  gradient_accumulation_steps: 2
+  learning_rate: 0.0003
+  max_steps: 200
+  warmup_steps: 20
